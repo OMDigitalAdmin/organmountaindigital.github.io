@@ -23,13 +23,19 @@ markdown: kramdown
 highlighter: rouge
 
 # Navigation
-header_pages:
-  - index.md
-  - about.md
-  - events.md
-  - support.md
-  - impact.md
-  - veteran.md
+main_nav:
+  - title: "Home"
+    url: /
+  - title: "About"
+    url: /about/
+  - title: "Events"
+    url: /events/
+  - title: "Support"
+    url: /support/
+  - title: "Impact"
+    url: /impact/
+  - title: "Veteran-Owned"
+    url: /veteran/
 
 # Social
 email: contact@organmountaindigital.com
