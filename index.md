@@ -1,8 +1,11 @@
 ---
-layout: default
+layout: home
 title: Home
+author_profile: false
 ---
 
-<h1>Organ Mountain Digital</h1>
-<p>Community-powered media for Las Cruces.</p>
-<p>We’re getting things ready. In the meantime, reach us at <a href="mailto:contact@organmountaindigital.com">contact@organmountaindigital.com</a></p>
+# Organ Mountain Digital
+
+Community-powered media for Las Cruces.
+
+We’re getting things ready. In the meantime, reach us at [contact@organmountaindigital.com](mailto:contact@organmountaindigital.com)
