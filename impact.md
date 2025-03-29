@@ -1,6 +1,6 @@
 ---
 layout: single
-title: Impact
+title: "Impact"
 permalink: /impact/
 ---
 
