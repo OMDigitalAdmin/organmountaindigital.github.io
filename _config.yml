@@ -3,7 +3,7 @@ title: Organ Mountain Digital
 description: Community-powered media for Las Cruces
 baseurl: ""
 url: "https://organmountaindigital.com"
-repository: yourgithubusername/organmountaindigital
+repository: organmountaindigital/organmountaindigital.github.io
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
