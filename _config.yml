@@ -1,27 +1,36 @@
 title: Organ Mountain Digital
 description: Community-powered media for Las Cruces
-baseurl: "" # leave this blank if deploying to a custom domain
+baseurl: ""
 url: "https://organmountaindigital.com"
-theme: minima
-markdown: kramdown
-
-# Navigation links
-theme_config:
-  navigation:
-    - title: "Home"
-      url: "/"
-    - title: "About"
-      url: "/about/"
-    - title: "Events"
-      url: "/events/"
-    - title: "Support Us"
-      url: "/support/"
-    - title: "Impact"
-      url: "/impact/"
-    - title: "Veteran-Owned"
-      url: "/veteran/"
-
-# Build settings
+theme: "minimal-mistakes-jekyll"
+repository: yourgithubusername/organmountaindigital
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-include-cache
+
+# Build settings
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+
+markdown: kramdown
+highlighter: rouge
+
+# Navigation
+header_pages:
+  - index.md
+  - about.md
+  - events.md
+  - support.md
+  - impact.md
+  - veteran.md
+
+# Social
+email: contact@organmountaindigital.com
+locale: en-US
