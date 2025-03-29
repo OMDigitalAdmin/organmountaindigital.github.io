@@ -1,8 +1,8 @@
+remote_theme: mmistakes/minimal-mistakes
 title: Organ Mountain Digital
 description: Community-powered media for Las Cruces
 baseurl: ""
 url: "https://organmountaindigital.com"
-theme: "minimal-mistakes-jekyll"
 repository: yourgithubusername/organmountaindigital
 plugins:
   - jekyll-feed
