@@ -1,6 +1,6 @@
 ---
 layout: single
-title: Veteran-Owned
+title: "Veteran-Owned"
 permalink: /veteran/
 ---
 
