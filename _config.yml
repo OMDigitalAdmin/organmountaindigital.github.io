@@ -34,3 +34,11 @@ header_pages:
 # Social
 email: contact@organmountaindigital.com
 locale: en-US
+
+collections:
+  events:
+    output: true
+    permalink: /events/:title/
+  vetowned:
+    output: true
+    permalink: /vet-owned/:title/
