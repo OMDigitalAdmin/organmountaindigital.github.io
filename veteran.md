@@ -1,8 +1,11 @@
 ---
-layout: default
+layout: single
 title: Veteran-Owned
 permalink: /veteran/
 ---
 
-<h2>Veteran-Owned & Operated</h2>
-<p>As a veteran-owned business, we believe in building community through service. We proudly feature and support other veteran-owned businesses.</p>
+<ul>
+  {% for biz in site.vetowned %}
+    <li><a href="{{ biz.url | relative_url }}">{{ biz.title }}</a></li>
+  {% endfor %}
+</ul>
