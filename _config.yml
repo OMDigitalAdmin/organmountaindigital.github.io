@@ -14,16 +14,15 @@ plugins:
 defaults:
   - scope:
       path: ""
-      type: posts
     values:
       layout: single
-      author_profile: true
 
 markdown: kramdown
 highlighter: rouge
 
 # Navigation
-main_nav:
+navigation:
+  main:
   - title: "Home"
     url: /
   - title: "About"
