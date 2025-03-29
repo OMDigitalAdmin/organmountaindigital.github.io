@@ -1,6 +1,6 @@
 ---
 layout: single
-title: Community Events
+title: "Community Events"
 permalink: /events/
 ---
 
