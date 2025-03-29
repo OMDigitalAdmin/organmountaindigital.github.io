@@ -1,7 +1,7 @@
 ---
-layout: default
-title: Home
-author_profile: false
+layout: page
+title: Organ Mountain Digital
+subtitle: Community-powered media for Las Cruces
 ---
 
 # Organ Mountain Digital
