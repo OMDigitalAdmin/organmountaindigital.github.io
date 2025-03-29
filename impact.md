@@ -1,10 +1,7 @@
 ---
-layout: default
-title: Where Your Support Goes
+layout: single
+title: Impact
 permalink: /impact/
 ---
 
-<h2>Where Your Support Goes</h2>
-<p>Ad revenue and sponsorships help fund community workshops, free nonprofit listings, and local youth STEM initiatives.</p>
-
----
+We're measuring our success through visibility, engagement, and real-world community impact.
