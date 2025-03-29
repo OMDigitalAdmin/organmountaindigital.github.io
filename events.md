@@ -1,10 +1,11 @@
 ---
-layout: default
-title: Events
+layout: single
+title: Community Events
 permalink: /events/
 ---
 
-<h2>Community Events</h2>
-<p>Check back soon for updated events in Las Cruces, or <a href="https://forms.gle" target="_blank">submit your event here</a>.</p>
-
----
+<ul>
+  {% for event in site.events %}
+    <li><a href="{{ event.url | relative_url }}">{{ event.title }}</a></li>
+  {% endfor %}
+</ul>
