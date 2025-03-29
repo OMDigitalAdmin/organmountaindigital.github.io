@@ -1,6 +1,6 @@
 ---
 layout: single
-title: Support Us
+title: "Support Us"
 permalink: /support/
 ---
 
