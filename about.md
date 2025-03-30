@@ -12,6 +12,8 @@ Organ Mountain Digital is a community-first media platform built to amplify loca
 
 We noticed a gap — community stories and events were scattered or going unheard. This platform was created to give everyone in Las Cruces a voice and a place to share what's happening.
 
+So we built an **open platform** where what matters to Las Cruces rises to the top.  
+
 ## What We Offer
 
 - Free listings for local nonprofits  
