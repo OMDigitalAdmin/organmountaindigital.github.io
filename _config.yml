@@ -10,11 +10,11 @@ repository: organmountaindigital/organmountaindigital.github.io
 # Navigation
 navbar-links:
   Home: /
-  About: /about
-  Events: /events
-  Support: /support
-  Impact: /impact
-  "Veteran-Owned": /veteran
+  About: /about.html
+  Events: /events.html
+  Support: /support.html
+  Impact: /impact.html
+  "Veteran-Owned": /veteran.html
 
 # Social
 email: contact@organmountaindigital.com
