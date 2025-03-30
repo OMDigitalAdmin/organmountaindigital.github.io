@@ -53,3 +53,34 @@ h1, h2 {
 .archive__item:hover {
   transform: scale(1.02);
 }
+<style>
+  .grid__wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+
+  .archive__item {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease;
+  }
+
+  .archive__item:hover {
+    transform: translateY(-4px);
+  }
+
+  .archive__item-title {
+    margin-top: 0;
+    font-size: 1.2rem;
+  }
+
+  .archive__item-excerpt {
+    font-size: 0.95rem;
+    color: #333;
+  }
+</style>

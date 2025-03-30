@@ -23,26 +23,26 @@ permalink: /about/
 <section style="margin-bottom: 2rem;">
   <h2>💡 What We Offer</h2>
 
-  <div class="grid__wrapper">
+  <div class="grid_wrapper">
 
-    <div class="archive__item">
-      <h4 class="archive__item-title">🗓️ Community Events</h4>
-      <p class="archive__item-excerpt">List, discover, and promote local events in Las Cruces and beyond.</p>
+    <div class="archive_item">
+      <h4 class="archive_item-title">🗓️ Community Events</h4>
+      <p class="archive_item-excerpt">List, discover, and promote local events in Las Cruces and beyond.</p>
     </div>
 
-    <div class="archive__item">
-      <h4 class="archive__item-title">🪖 Veteran-Owned Directory</h4>
-      <p class="archive__item-excerpt">A growing guide to businesses run by those who served.</p>
+    <div class="archive_item">
+      <h4 class="archive_item-title">🪖 Veteran-Owned Directory</h4>
+      <p class="archive_item-excerpt">A growing guide to businesses run by those who served.</p>
     </div>
 
-    <div class="archive__item">
-      <h4 class="archive__item-title">📣 Sponsored Posts</h4>
-      <p class="archive__item-excerpt">Low-cost, high-visibility space for small businesses and nonprofits.</p>
+    <div class="archive_item">
+      <h4 class="archive_item-title">📣 Sponsored Posts</h4>
+      <p class="archive_item-excerpt">Low-cost, high-visibility space for small businesses and nonprofits.</p>
     </div>
 
-    <div class="archive__item">
-      <h4 class="archive__item-title">🧠 Digital Equity</h4>
-      <p class="archive__item-excerpt">Backed by Roadrunner STEM — digital literacy, tech workshops, and more.</p>
+    <div class="archive_item">
+      <h4 class="archive_item-title">🧠 Digital Equity</h4>
+      <p class="archive_item-excerpt">Backed by Roadrunner STEM — digital literacy, tech workshops, and more.</p>
     </div>
 
   </div>
