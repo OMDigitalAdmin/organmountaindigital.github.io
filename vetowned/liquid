@@ -1,8 +1,0 @@
-<ul>
-  {% for biz in site.vetowned %}
-    <li>
-      <a href="{{ biz.url | relative_url }}">{{ biz.title }}</a><br>
-      <small>{{ biz.location }}</small>
-    </li>
-  {% endfor %}
-</ul>
