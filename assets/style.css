@@ -53,8 +53,7 @@ h1, h2 {
 .archive__item:hover {
   transform: scale(1.02);
 }
-<style>
-  .grid__wrapper {
+.grid__wrapper {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 1.5rem;
@@ -84,3 +83,55 @@ h1, h2 {
     color: #333;
   }
 </style>
+/* Section Styling */
+section {
+  margin: 2.5rem 0;
+  padding: 1rem 1rem 1.5rem;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+/* Section Headings */
+section h2 {
+  font-size: 1.5rem;
+  margin-top: 0;
+  border-bottom: 2px solid #0072ce;
+  padding-bottom: 0.3rem;
+}
+
+/* Donation Button */
+a.donation-button {
+  background-color: #0072ce;
+  color: #fff !important;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  display: inline-block;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease;
+}
+a.donation-button:hover {
+  background-color: #005fa3;
+}
+
+/* Notice Box */
+.notice--primary {
+  background: #eef6fb;
+  padding: 1rem;
+  border-left: 4px solid #0072ce;
+  border-radius: 6px;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  color: #003f6f;
+}
+
+/* Quote Block Styling */
+blockquote {
+  font-style: italic;
+  border-left: 4px solid #ccc;
+  padding-left: 1rem;
+  margin: 1rem 0;
+  color: #444;
+}
