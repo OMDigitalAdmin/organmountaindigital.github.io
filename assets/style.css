@@ -152,4 +152,25 @@ blockquote {
      2px -2px 0 #000,
     -2px  2px 0 #000,
      2px  2px 0 #000;
+}/* Hero nav styling */
+.hero-nav {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 1rem 0;
+  list-style: none;
+  margin: 0;
+}
+
+.hero-nav a {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+
+  /* Add same black outline as hero text */
+  text-shadow:
+    -2px -2px 0 #000,
+     2px -2px 0 #000,
+    -2px  2px 0 #000,
+     2px  2px 0 #000;
 }
