@@ -1,4 +1,5 @@
 remote_theme: daattali/beautiful-jekyll
+inject_custom_head: true
 title: Organ Mountain Digital
 description: Community-powered media for Las Cruces
 baseurl: ""
