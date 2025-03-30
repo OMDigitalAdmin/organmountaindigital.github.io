@@ -1,14 +1,22 @@
+/* ========== Base Elements ========== */
+
 body {
   font-family: system-ui, sans-serif;
   line-height: 1.6;
   margin: 0;
   padding: 0;
-  background: #f9f9f9;
-  color: #333;
+  background: #eaeaea; /* Background: soft light gray */
+  color: #4f6d7a;       /* Default text color: cool slate */
 }
 
+h1, h2 {
+  color: #dd6e42; /* Primary highlight for headings */
+}
+
+/* ========== Header ========== */
+
 header {
-  background: #4a5568;
+  background: #4f6d7a; /* Accent: slate blue */
   color: white;
   padding: 1rem;
   text-align: center;
@@ -29,61 +37,23 @@ nav a {
   font-weight: bold;
 }
 
+/* ========== Main Content ========== */
+
 main {
   padding: 2rem;
 }
 
+/* ========== Footer ========== */
+
 footer {
-  background: #edf2f7;
+  background: #c0d6df; /* Light blue footer background */
   text-align: center;
   padding: 1rem;
   font-size: 0.875rem;
 }
 
-h1, h2 {
-  color: #2d3748;
-}
-.archive__item {
-  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-  padding: 1rem;
-  background: #fff;
-  border-radius: 6px;
-  transition: transform 0.2s ease;
-}
-.archive__item:hover {
-  transform: scale(1.02);
-}
-.grid__wrapper {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 1.5rem;
-    margin: 2rem 0;
-  }
+/* ========== Section Blocks ========== */
 
-  .archive__item {
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 1rem;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-    transition: transform 0.2s ease;
-  }
-
-  .archive__item:hover {
-    transform: translateY(-4px);
-  }
-
-  .archive__item-title {
-    margin-top: 0;
-    font-size: 1.2rem;
-  }
-
-  .archive__item-excerpt {
-    font-size: 0.95rem;
-    color: #333;
-  }
-</style>
-/* Section Styling */
 section {
   margin: 2.5rem 0;
   padding: 1rem 1rem 1.5rem;
@@ -92,17 +62,53 @@ section {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
-/* Section Headings */
 section h2 {
   font-size: 1.5rem;
   margin-top: 0;
-  border-bottom: 2px solid #0072ce;
+  border-bottom: 2px solid #dd6e42; /* Primary underline */
   padding-bottom: 0.3rem;
 }
 
-/* Donation Button */
+/* ========== Cards ========== */
+
+.card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.card,
+.archive__item {
+  flex: 1 1 300px;
+  background: #fff;
+  border-radius: 6px;
+  padding: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease;
+}
+
+.card:hover,
+.archive__item:hover {
+  transform: translateY(-4px);
+}
+
+.card h3,
+.archive__item-title {
+  margin-top: 0;
+  color: #dd6e42; /* Primary heading inside cards */
+}
+
+.card p,
+.archive__item-excerpt {
+  font-size: 0.9rem;
+  color: #4f6d7a;
+}
+
+/* ========== Donation Button ========== */
+
 a.donation-button {
-  background-color: #0072ce;
+  background-color: #dd6e42; /* Primary */
   color: #fff !important;
   padding: 0.75rem 1.5rem;
   border-radius: 6px;
@@ -112,53 +118,29 @@ a.donation-button {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   transition: background 0.3s ease;
 }
+
 a.donation-button:hover {
-  background-color: #005fa3;
+  background-color: #bb5f35; /* Slightly darker on hover */
 }
 
-/* Notice Box */
+/* ========== Notice Box ========== */
+
 .notice--primary {
-  background: #eef6fb;
+  background: #e8dab2; /* Secondary: warm tan */
   padding: 1rem;
-  border-left: 4px solid #0072ce;
+  border-left: 4px solid #dd6e42; /* Primary */
   border-radius: 6px;
   margin-top: 1rem;
   margin-bottom: 2rem;
-  color: #003f6f;
+  color: #4f6d7a;
 }
 
-/* Quote Block Styling */
+/* ========== Blockquotes ========== */
+
 blockquote {
   font-style: italic;
-  border-left: 4px solid #ccc;
+  border-left: 4px solid #c0d6df; /* Light blue accent */
   padding-left: 1rem;
   margin: 1rem 0;
   color: #444;
-}
-.card-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-
-.card {
-  flex: 1 1 300px;
-  background: #fff;
-  border-radius: 6px;
-  padding: 1rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-  transition: transform 0.2s ease;
-}
-
-.card:hover {
-  transform: translateY(-4px);
-}
-
-.card h3 {
-  margin-top: 0;
-}
-
-.card p {
-  font-size: 0.9rem;
 }
