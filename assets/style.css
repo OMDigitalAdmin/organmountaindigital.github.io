@@ -43,3 +43,13 @@ footer {
 h1, h2 {
   color: #2d3748;
 }
+.archive__item {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  padding: 1rem;
+  background: #fff;
+  border-radius: 6px;
+  transition: transform 0.2s ease;
+}
+.archive__item:hover {
+  transform: scale(1.02);
+}
