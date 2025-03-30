@@ -47,3 +47,10 @@ subtitle: Community-powered media for Las Cruces
 > Want to submit an event, list your business, or sponsor a post?  
 > [📬 Email us here](mailto:contact@organmountaindigital.com)
 {: .notice--primary }
+
+<div style="text-align: center; margin: 3rem 0;">
+  <a href="mailto:contact@organmountaindigital.com?subject=Submit%20a%20Post" class="donation-button">
+    📬 Submit an Event or Business
+  </a>
+  <p style="font-size: 0.9rem; margin-top: 0.5rem;">Until our form is ready, just email us your info!</p>
+</div>
