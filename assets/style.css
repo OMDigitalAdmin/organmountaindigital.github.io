@@ -144,3 +144,12 @@ blockquote {
   margin: 1rem 0;
   color: #444;
 }
+/* Hero text with black outline */
+.hero-text {
+  color: #fff;
+  text-shadow:
+    -2px -2px 0 #000,
+     2px -2px 0 #000,
+    -2px  2px 0 #000,
+     2px  2px 0 #000;
+}
