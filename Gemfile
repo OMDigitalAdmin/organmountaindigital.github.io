@@ -1,2 +1,4 @@
 source 'https://rubygems.org'
-gem 'ffi', '< 1.17'
+gem 'jekyll', '~> 4.3.2'
+gem 'webrick'
+gem 'bundler'
