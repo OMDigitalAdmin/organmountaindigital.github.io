@@ -1,3 +1,7 @@
 [build]
   publish = "_site"
   command = "bundle exec jekyll build"
+
+[[edge_functions]]
+  function = "geo-block"  # Name of your Edge Function file (without .js)
+  path = "/*"            # Applies to all routes
