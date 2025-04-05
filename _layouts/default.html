@@ -21,21 +21,23 @@
 
 <script>
   // Open Contact Modal
-  document.getElementById('openContact')?.addEventListener('click', () => {
-    document.getElementById('contactModal').style.display = 'block';
-  });
+  document.getElementById('openContact').addEventListener('click', function() {
+  const modal = document.getElementById('contactModal');
+  modal.style.display = 'block';
+  document.body.style.overflow = 'hidden'; // Prevent scrolling
+});
 
-  // Open Donate Modal
-  document.getElementById('openDonate')?.addEventListener('click', () => {
-    document.getElementById('donateModal').style.display = 'block';
-  });
+function closeModal() {
+  document.getElementById('contactModal').style.display = 'none';
+  document.body.style.overflow = 'auto'; // Re-enable scrolling
+}
 
-  // Close Modals via overlay click
-  window.addEventListener('click', (e) => {
-    if (e.target.classList.contains('modal')) {
-      e.target.style.display = 'none';
-    }
-  });
+// Close when clicking overlay or X button
+document.querySelector('.modal').addEventListener('click', function(e) {
+  if (e.target === this || e.target.classList.contains('modal-close')) {
+    closeModal();
+  }
+});
 
   // Close Modal by ID
   function closeModal(id) {
