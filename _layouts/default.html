@@ -5,9 +5,49 @@
 </head>
 <body>
   {% include nav.html %}
+
   <main>
     {{ content }}
   </main>
+
+  <!-- Hidden Modals -->
+  <div id="contactModal" class="modal" style="display:none;">
+    {% include contact.html %}
+  </div>
+
+  <div id="donateModal" class="modal" style="display:none;">
+    {% include donation.html %}
+  </div>
+
+<script>
+  // Open Contact Modal
+  document.getElementById('openContact')?.addEventListener('click', () => {
+    document.getElementById('contactModal').style.display = 'block';
+  });
+
+  // Open Donate Modal
+  document.getElementById('openDonate')?.addEventListener('click', () => {
+    document.getElementById('donateModal').style.display = 'block';
+  });
+
+  // Close Modals via overlay click
+  window.addEventListener('click', (e) => {
+    if (e.target.classList.contains('modal')) {
+      e.target.style.display = 'none';
+    }
+  });
+
+  // Close Modal by ID
+  function closeModal(id) {
+    const modal = document.getElementById(id);
+    if (modal) {
+      modal.style.display = 'none';
+      const form = modal.querySelector('form');
+      if (form) form.reset(); // Auto-reset form
+    }
+  }
+</script>
+
   {% include footer.html %}
 </body>
 </html>
