@@ -1,0 +1,23 @@
+<form name="event-submission" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+  <input type="hidden" name="form-name" value="event-submission" />
+  <p hidden><label>Don’t fill this out: <input name="bot-field" /></label></p>
+
+  <p><label>Organization Name: <input type="text" name="organization" required></label></p>
+  <p><label>Contact Name: <input type="text" name="contact_name" required></label></p>
+  <p><label>Event Title: <input type="text" name="title" required></label></p>
+  <p><label>Event Category: 
+    <select name="category">
+      <option value="Family Friendly">Family Friendly</option>
+      <option value="Special Needs Friendly">Special Needs Friendly</option>
+      <option value="Veteran-Owned">Veteran-Owned</option>
+      <!-- Add more as needed -->
+    </select>
+  </label></p>
+  <p><label>Start Date/Time: <input type="datetime-local" name="start" required></label></p>
+  <p><label>End Date/Time: <input type="datetime-local" name="end"></label></p>
+  <p><label>Location: <input type="text" name="location" required></label></p>
+  <p><label>Description: <textarea name="description" required></textarea></label></p>
+  <p><label>Public Link (optional): <input type="url" name="link"></label></p>
+  <p><label>Contact Email: <input type="email" name="email" required></label></p>
+  <p><button type="submit">Submit Event</button></p>
+</form>
