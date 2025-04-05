@@ -1,29 +1,11 @@
 remote_theme: daattali/beautiful-jekyll
 inject_custom_head: true
+
 title: Organ Mountain Digital
 description: Community-powered media for Las Cruces
 baseurl: ""
 url: "https://organmountaindigital.com"
 email: contact@organmountaindigital.com
-repository: organmountaindigital/organmountaindigital.github.io
-
-# Navigation
-navbar-links:
-  Home: /
-  About: /about.html
-  Events: /events.html
-  Support: /support.html
-  Impact: /impact.html
-  "Veteran-Owned": /veteran.html
-
-# Social
-email: contact@organmountaindigital.com
 locale: en-US
 
-collections:
-  events:
-    output: true
-    permalink: /events/:title/
-  vetowned:
-    output: true
-    permalink: /vet-owned/:title/
+repository: organmountaindigital/organmountaindigital.github.io

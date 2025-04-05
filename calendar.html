@@ -1,28 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Calendar | Organ Mountain Digital</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="/assets/style.css">
-  <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet"/>
-  <style>
-    .calendar-layout {
-      display: grid;
-      grid-template-areas:
-        "filter filter"
-        "calendar sidebar"
-        "cta sidebar";
-      grid-template-columns: 2fr 1fr;
-      gap: 1rem;
-      margin: 2rem 0;
-    }
-    #calendar { grid-area: calendar; }
-    .filter { grid-area: filter; }
-    .sidebar { grid-area: sidebar; background: #fff; padding: 1rem; border-radius: 8px; }
-    .cta { grid-area: cta; text-align: center; }
-  </style>
-</head>
+
+{% include head-custom.html %}
+
 <body>
 
   <!-- Header -->
@@ -114,9 +94,7 @@
     }
   </script>
 
-  <footer>
-    <p>&copy; 2025 Organ Mountain Digital, LLC. All rights reserved.</p>
-  </footer>
+  {% include footer.html %}
 
 </body>
 </html>
