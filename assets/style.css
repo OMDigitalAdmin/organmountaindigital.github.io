@@ -101,21 +101,23 @@
     box-shadow: 0 4px 12px rgba(75, 59, 71, 0.15);
   }
 
-  .button {
-    background: var(--primary);
-    color: var(--text-light) !important;
-    padding: 0.75rem 1.5rem;
-    border-radius: 6px;
-    display: inline-block;
-    font-weight: bold;
-    transition: all 0.3s;
-  }
+  .button,
+button.button {
+  padding: 0.6rem 1.2rem;
+  font-weight: bold;
+  background: #4338ca;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
 
-  .button:hover {
-    background: var(--text-light);
-    color: var(--primary) !important;
-    box-shadow: 0 0 0 2px var(--primary);
-  }
+.button:hover {
+  background: #3730a3;
+}
 
   /* ================ */
   /* Utilities         */
