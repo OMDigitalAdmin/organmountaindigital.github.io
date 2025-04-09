@@ -148,6 +148,12 @@
       gap: 0.5rem;
     }
   }
+
+.hero-text {
+  color: white;
+  text-shadow: 2px 2px 4px black;
+}
+
   /* Modal Styles */
 .modal {
   display: none;
