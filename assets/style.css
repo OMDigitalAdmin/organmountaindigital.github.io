@@ -101,7 +101,7 @@
     box-shadow: 0 4px 12px rgba(75, 59, 71, 0.15);
   }
 
-  .donation-button {
+  .button {
     background: var(--primary);
     color: var(--text-light) !important;
     padding: 0.75rem 1.5rem;
@@ -111,7 +111,7 @@
     transition: all 0.3s;
   }
 
-  .donation-button:hover {
+  .button:hover {
     background: var(--text-light);
     color: var(--primary) !important;
     box-shadow: 0 0 0 2px var(--primary);
