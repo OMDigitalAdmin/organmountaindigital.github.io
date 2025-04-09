@@ -157,40 +157,34 @@ button.button {
 }
 
   /* Modal Styles */
-.modal {
+.modal-overlay {
   display: none;
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 90%;
-  max-width: 600px;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 9998;
+}
+
+.modal-overlay.show {
+  display: block;
+}
+
+.modal {
   background: white;
   padding: 2rem;
   border-radius: 8px;
-  z-index: 1000;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  max-width: 500px;
+  margin: 5% auto;
+  position: relative;
+  z-index: 9999;
 }
 
-/* Overlay */
-.modal::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0,0,0,0.5);
-  z-index: 999;
-}
-
-/* Close Button */
 .modal-close {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
+  top: 10px;
+  right: 10px;
+  font-size: 1.2rem;
   background: none;
   border: none;
-  font-size: 1.5rem;
   cursor: pointer;
 }

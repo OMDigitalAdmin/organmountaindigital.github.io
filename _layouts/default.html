@@ -10,82 +10,49 @@
     {{ content }}
   </main>
 
-  <!-- Modals (hidden by default) -->
-  <div id="contactModal" class="modal-overlay">
-    <div class="modal">
-      <button class="modal-close" onclick="closeModal('contactModal')">✖</button>
-      {% include contact-form.html %}
-    </div>
+  <!-- Contact Modal -->
+<div id="contactModal" class="modal-overlay">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('contactModal')">✖</button>
+    {% include contact-form.html %}
   </div>
+</div>
 
-  <div id="donateModal" class="modal-overlay">
-    <div class="modal">
-      <button class="modal-close" onclick="closeModal('donateModal')">✖</button>
-      {% include donation.html %}
-    </div>
+<!-- Donation Modal -->
+<div id="donateModal" class="modal-overlay">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('donateModal')">✖</button>
+    {% include donation.html %}
   </div>
+</div>
 
-  <!-- Modal Styling -->
-  <style>
-    .modal-overlay {
-      display: none;
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.6);
-      z-index: 9998;
-    }
-
-    .modal-overlay.show {
-      display: block;
-    }
-
-    .modal {
-      background: white;
-      padding: 2rem;
-      border-radius: 8px;
-      max-width: 500px;
-      margin: 5% auto;
-      position: relative;
-      z-index: 9999;
-    }
-
-    .modal-close {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      font-size: 1.2rem;
-      background: none;
-      border: none;
-      cursor: pointer;
-    }
-  </style>
 
   <!-- Modal JS -->
-  <script>
-    // Open modals
-    document.getElementById('openContact')?.addEventListener('click', () => {
-      document.getElementById('contactModal').classList.add('show');
-    });
+ <script>
+  document.getElementById('openContact')?.addEventListener('click', () => {
+    document.getElementById('contactModal').classList.add('show');
+  });
 
-    // Close modal by ID
-    function closeModal(id) {
-      const modal = document.getElementById(id);
-      modal.classList.remove('show');
-      // Reset form if exists
-      const form = modal.querySelector('form');
+  document.getElementById('openDonate')?.addEventListener('click', () => {
+    document.getElementById('donateModal').classList.add('show');
+  });
+
+  function closeModal(id) {
+    const modal = document.getElementById(id);
+    modal.classList.remove('show');
+    const form = modal.querySelector('form');
+    if (form) form.reset();
+  }
+
+  // Close if user clicks outside the modal box
+  window.addEventListener('click', (e) => {
+    if (e.target.classList.contains('modal-overlay')) {
+      e.target.classList.remove('show');
+      const form = e.target.querySelector('form');
       if (form) form.reset();
     }
-
-    // Close when clicking outside modal box
-    window.addEventListener('click', (e) => {
-      if (e.target.classList.contains('modal-overlay')) {
-        e.target.classList.remove('show');
-        const form = e.target.querySelector('form');
-        if (form) form.reset();
-      }
-    });
-  </script>
-
+  });
+</script>
   {% include footer.html %}
 </body>
 </html>
