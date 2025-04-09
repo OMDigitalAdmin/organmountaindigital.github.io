@@ -29,7 +29,7 @@
 
   <!-- Modal JS -->
  <script>
-  document.getElementById('openContact')?.addEventListener('click', () => {
+   document.getElementById('openContact')?.addEventListener('click', () => {
     document.getElementById('contactModal').classList.add('show');
   });
 
@@ -39,17 +39,16 @@
 
   function closeModal(id) {
     const modal = document.getElementById(id);
-    modal.classList.remove('show');
-    const form = modal.querySelector('form');
-    if (form) form.reset();
+    if (modal) {
+      modal.classList.remove('show');
+      const form = modal.querySelector('form');
+      if (form) form.reset();
   }
 
   // Close if user clicks outside the modal box
-  window.addEventListener('click', (e) => {
+   window.addEventListener('click', (e) => {
     if (e.target.classList.contains('modal-overlay')) {
-      e.target.classList.remove('show');
-      const form = e.target.querySelector('form');
-      if (form) form.reset();
+      closeModal(e.target.id);
     }
   });
 </script>
