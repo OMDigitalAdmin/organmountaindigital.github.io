@@ -1,179 +1,76 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Calendar | Organ Mountain Digital</title>
-  <meta name="viewport" content="idth=device-width, initial-scale=1">
-  
-  <!-- Custom styles -->
-  <link rel="stylesheet" href="/assets/style.css">
-  <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet"/>
-  <style>
-    body {
-      font-family: sans-serif;
-      padding: 1rem;
-    }
-    #categoryFilter {
-      margin-bottom: 1rem;
-    }
-    .fc-event-title {
-      cursor: pointer;
-    }
-    .modal {
-      display: none;
-      position: fixed;
-      top: 10%;
-      left: 50%;
-      transform: translateX(-50%);
-      background: white;
-      padding: 1rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-      max-width: 500px;
-      z-index: 9999;
-    }
-    .modal.show {
-      display: block;
-    }
-    .modal h2 {
-      margin-top: 0;
-    }
-    .modal-overlay {
-      display: none;
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.5);
-      z-index: 9998;
-    }
-    .modal-overlay.show {
-      display: block;
-    }
-  </style>
-</head>
+---
+layout: default
+title: Community Calendar
+---
 
+<main class="calendar-layout">
 
-
-
-<body>
-
-  <header style="position: relative; height: 320px; overflow: hidden;">
-
-  <!-- Full Header Image -->
-  <img src="/assets/images/head-banner.png" alt="Organ Mountains Banner"
-       style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; filter: brightness(0.6);">
-
-  <!-- Overlay Content -->
-  <div style="position: relative; z-index: 2; color: white; text-align: center; padding-top: 2rem;">
-    <h1 class="hero-text">Organ Mountain Digital</h1>
-    <p class="hero-text" style="font-size: 1.2rem;">Las Cruces Events & Local Stories</p>
-
-    <!-- Navigation -->
-    <nav>
-      <ul class="hero-nav">
-        <li><a href="/index.html">Home</a></li>
-        <li><a href="/about.html">About</a></li>
-        <li><a href="/events.html">Events</a></li>
-        <li><a href="/calendar.html">Community Calendar</a></li>
-        <li><a href="/support.html">Support</a></li>
-        <li><a href="/impact.html">Impact</a></li>
-        <li><a href="/veteran.html">Veteran-Owned</a></li>
-      </ul>
-    </nav>
+  <!-- A: Filter -->
+  <div class="filter">
+    <label for="categoryFilter"><strong>Filter by Category:</strong></label>
+    <select id="categoryFilter">
+      <option value="all">Show All</option>
+      <option value="Family Friendly">Family Friendly</option>
+      <option value="Veteran-Owned">Veteran-Owned</option>
+      <option value="LGBTQ+ Friendly">LGBTQ+ Friendly</option>
+      <!-- Add more later -->
+    </select>
   </div>
 
-</header>
-
-
-  <h1>Community Event Calendar</h1>
-
-  <label for="categoryFilter">Filter by Category:</label>
-  <select id="categoryFilter">
-    <option value="all">Show All</option>
-    <option value="Family Friendly">Family Friendly</option>
-    <option value="Special Needs Friendly">Special Needs Friendly</option>
-    <!-- Add more categories here -->
-  </select>
-
+  <!-- B: Calendar -->
   <div id="calendar"></div>
 
-  <!-- Modal -->
-  <div class="modal-overlay" id="modalOverlay"></div>
-  <div class="modal" id="eventModal">
-    <h2 id="modalTitle"></h2>
-    <p><strong>Date/Time:</strong> <span id="modalDate"></span></p>
-    <p><strong>Location:</strong> <span id="modalLocation"></span></p>
-    <p id="modalDescription"></p>
-    <p><strong>Links:</strong> <span id="modalLinks"></span></p>
-    <p><strong>Contact:</strong> <span id="modalContact"></span></p>
-    <button onclick="closeModal()">Close</button>
+  <!-- C: Sidebar -->
+  <div class="sidebar">
+    <h3>Upcoming Events</h3>
+    <ul id="upcomingEvents">
+      <!-- JS will populate this from events.json -->
+    </ul>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
-  <script>
-    let calendar;
-    let allEvents = [];
+  <!-- D: Call to Action -->
+  <div class="cta" style="margin-top: 2rem;">
+    <a href="event-submission.html" class="button">📬 Submit Your Event</a>
+  </div>
 
-    // Fetch events
-    fetch('events.json')
-      .then(res => res.json())
-      .then(data => {
-        allEvents = data;
-        initCalendar(allEvents);
-      });
 
-    function initCalendar(events) {
-      const calendarEl = document.getElementById('calendar');
+</main>
 
-      calendar = new FullCalendar.Calendar(calendarEl, {
-        initialView: 'dayGridMonth',
-        events: events.map(formatEvent),
-        eventClick: function(info) {
-          showModal(info.event.extendedProps);
-        }
-      });
+<!-- FullCalendar -->
+<link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js" defer></script>
 
-      calendar.render();
+<script>
+  let allEvents = [];
 
-      document.getElementById('categoryFilter').addEventListener('change', function () {
-        const value = this.value;
-        const filtered = value === 'all'
-          ? allEvents
-          : allEvents.filter(ev => ev.category === value);
-        calendar.removeAllEvents();
-        calendar.addEventSource(filtered.map(formatEvent));
-      });
-    }
+  fetch('events.json')
+    .then(res => res.json())
+    .then(data => {
+      allEvents = data;
+      initCalendar(allEvents);
+      renderUpcoming(data);
+    });
 
-    function formatEvent(ev) {
-      return {
-        title: ev.title,
-        start: ev.start,
-        end: ev.end || ev.start,
-        category: ev.category,
-        extendedProps: ev
-      };
-    }
+  function initCalendar(events) {
+    const calendar = new FullCalendar.Calendar(document.getElementById('calendar'), {
+      initialView: 'dayGridMonth',
+      events: events,
+    });
+    calendar.render();
 
-    function showModal(event) {
-      document.getElementById('modalTitle').textContent = event.title;
-      document.getElementById('modalDate').textContent = new Date(event.start).toLocaleString();
-      document.getElementById('modalLocation').textContent = event.location || 'TBD';
-      document.getElementById('modalDescription').textContent = event.description || '';
-      document.getElementById('modalLinks').innerHTML = event.links ? `<a href="${event.links}" target="_blank">More Info</a>` : '—';
-      document.getElementById('modalContact').textContent = event.contact || '—';
-      document.getElementById('modalOverlay').classList.add('show');
-      document.getElementById('eventModal').classList.add('show');
-    }
+    document.getElementById('categoryFilter').addEventListener('change', function () {
+      const value = this.value;
+      const filtered = value === 'all' ? allEvents : allEvents.filter(e => e.category === value);
+      calendar.removeAllEvents();
+      calendar.addEventSource(filtered);
+    });
+  }
 
-    function closeModal() {
-      document.getElementById('modalOverlay').classList.remove('show');
-      document.getElementById('eventModal').classList.remove('show');
-    }
-  </script>
-
- <footer>
-    <p>&copy; 2025 Organ Mountain Digital, LLC. All rights reserved.</p>
-  </footer>
-  
-</body>
-</html>
+  function renderUpcoming(events) {
+    const upcoming = events
+      .filter(e => new Date(e.start) >= new Date())
+      .slice(0, 5);
+    const list = document.getElementById('upcomingEvents');
+    list.innerHTML = upcoming.map(ev => `<li><strong>${ev.title}</strong><br>${new Date(ev.start).toLocaleString()}</li>`).join('');
+  }
+</script>

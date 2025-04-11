@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% include head-custom.html %}
+</head>
+<body>
+  {% include nav.html %}
+
+  <main>
+    {{ content }}
+  </main>
+<!-- Contact Drawer (right) -->
+<div id="contactDrawer" class="drawer drawer-right">
+  <button class="drawer-close" onclick="toggleDrawer('contactDrawer')">✖</button>
+  {% include contact-form.html %}
+</div>
+
+<!-- Donate Drawer (left) -->
+<div id="donateDrawer" class="drawer drawer-left">
+  <button class="drawer-close" onclick="toggleDrawer('donateDrawer')">✖</button>
+  {% include donation.html %}
+</div>
+<script>
+  function toggleDrawer(id) {
+    const drawer = document.getElementById(id);
+    drawer.classList.toggle('open');
+  }
+
+  // Optional: Close on ESC
+  document.addEventListener('keydown', function(e) {
+    if (e.key === "Escape") {
+      document.querySelectorAll('.drawer.open').forEach(d => d.classList.remove('open'));
+    }
+  });
+</script>
+
+  
+  {% include footer.html %}
+</body>
+</html>
