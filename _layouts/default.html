@@ -9,49 +9,32 @@
   <main>
     {{ content }}
   </main>
-
-  <!-- Contact Modal -->
-<div id="contactModal" class="modal-overlay">
-  <div class="modal">
-    <button class="modal-close" onclick="closeModal('contactModal')">✖</button>
-    {% include contact-form.html %}
-  </div>
+<!-- Contact Drawer (right) -->
+<div id="contactDrawer" class="drawer drawer-right">
+  <button class="drawer-close" onclick="toggleDrawer('contactDrawer')">✖</button>
+  {% include contact-form.html %}
 </div>
 
-<!-- Donation Modal -->
-<div id="donateModal" class="modal-overlay">
-  <div class="modal">
-    <button class="modal-close" onclick="closeModal('donateModal')">✖</button>
-    {% include donation.html %}
-  </div>
+<!-- Donate Drawer (left) -->
+<div id="donateDrawer" class="drawer drawer-left">
+  <button class="drawer-close" onclick="toggleDrawer('donateDrawer')">✖</button>
+  {% include donation.html %}
 </div>
-
-
-  <!-- Modal JS -->
- <script>
-   document.getElementById('openContact')?.addEventListener('click', () => {
-    document.getElementById('contactModal').classList.add('show');
-  });
-
-  document.getElementById('openDonate')?.addEventListener('click', () => {
-    document.getElementById('donateModal').classList.add('show');
-  });
-
-  function closeModal(id) {
-    const modal = document.getElementById(id);
-    if (modal) {
-      modal.classList.remove('show');
-      const form = modal.querySelector('form');
-      if (form) form.reset();
+<script>
+  function toggleDrawer(id) {
+    const drawer = document.getElementById(id);
+    drawer.classList.toggle('open');
   }
 
-  // Close if user clicks outside the modal box
-   window.addEventListener('click', (e) => {
-    if (e.target.classList.contains('modal-overlay')) {
-      closeModal(e.target.id);
+  // Optional: Close on ESC
+  document.addEventListener('keydown', function(e) {
+    if (e.key === "Escape") {
+      document.querySelectorAll('.drawer.open').forEach(d => d.classList.remove('open'));
     }
   });
 </script>
+
+  
   {% include footer.html %}
 </body>
 </html>
